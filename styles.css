@@ -428,10 +428,10 @@ body.is-instant-page .page-track {
 }
 
 .hero-section {
-  grid-template-columns: minmax(0, 760px) minmax(280px, 360px);
+  grid-template-columns: minmax(0, 640px) minmax(96px, 150px) minmax(260px, 340px);
   align-items: center;
   justify-content: center;
-  column-gap: clamp(44px, 4.6vw, 72px);
+  column-gap: clamp(28px, 3.8vw, 56px);
   row-gap: clamp(16px, 2vw, 22px);
 }
 
@@ -605,13 +605,90 @@ h3 {
 
 .identity-orbit {
   position: relative;
-  grid-column: 2;
+  grid-column: 3;
   grid-row: 1;
   min-height: clamp(320px, 32vw, 430px);
   display: grid;
   place-items: center;
   justify-self: center;
   width: min(100%, 420px);
+}
+
+.hero-eth-core {
+  position: relative;
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+  width: clamp(86px, 8vw, 132px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  filter:
+    drop-shadow(0 0 18px rgba(143, 255, 235, 0.38))
+    drop-shadow(0 0 42px rgba(98, 126, 234, 0.3));
+  animation: ethCoreFloat 4.8s ease-in-out infinite;
+}
+
+.hero-eth-core svg {
+  position: relative;
+  z-index: 1;
+  width: 58%;
+  height: auto;
+  overflow: visible;
+  transform-origin: center;
+  animation: ethCoreBreathe 3.4s ease-in-out infinite;
+}
+
+.hero-eth-orbit,
+.hero-eth-orbit span {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+}
+
+.hero-eth-orbit {
+  border: 1px solid rgba(143, 255, 235, 0.24);
+  animation: slowSpin 16s linear infinite;
+}
+
+.hero-eth-orbit span {
+  border: 1px solid rgba(98, 126, 234, 0.26);
+  transform: scale(0.72) rotate(26deg);
+}
+
+.hero-eth-orbit span:last-child {
+  border-color: rgba(143, 255, 235, 0.16);
+  transform: scale(1.22) rotate(-18deg);
+  animation: ethOrbitPulse 3.2s ease-in-out infinite;
+}
+
+.hero-eth-face {
+  stroke: rgba(255, 255, 255, 0.24);
+  stroke-width: 0.7;
+  stroke-linejoin: round;
+}
+
+.hero-eth-face.top-left,
+.hero-eth-face.mid-left,
+.hero-eth-face.bottom-left {
+  fill: rgba(143, 255, 235, 0.82);
+}
+
+.hero-eth-face.top-right,
+.hero-eth-face.mid-right,
+.hero-eth-face.bottom-right {
+  fill: rgba(98, 126, 234, 0.8);
+}
+
+.hero-eth-face.mid-left,
+.hero-eth-face.mid-right {
+  filter: brightness(0.82);
+}
+
+.hero-eth-face.bottom-left,
+.hero-eth-face.bottom-right {
+  filter: brightness(0.68);
 }
 
 .orbit-ring {
@@ -1047,6 +1124,40 @@ body:not(.is-loading) .hero-section .reveal {
   }
 }
 
+@keyframes ethCoreFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes ethCoreBreathe {
+  0%,
+  100% {
+    opacity: 0.82;
+    transform: scale(0.96) rotate(-2deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04) rotate(2deg);
+  }
+}
+
+@keyframes ethOrbitPulse {
+  0%,
+  100% {
+    opacity: 0.32;
+    transform: scale(1.12) rotate(-18deg);
+  }
+  50% {
+    opacity: 0.72;
+    transform: scale(1.28) rotate(12deg);
+  }
+}
+
 @media (max-width: 1180px) {
   :root {
     --page-x: clamp(28px, 4vw, 46px);
@@ -1057,12 +1168,12 @@ body:not(.is-loading) .hero-section .reveal {
   }
 
   .hero-section {
-    grid-template-columns: minmax(0, 580px) minmax(220px, 300px);
-    column-gap: clamp(28px, 4vw, 42px);
+    grid-template-columns: minmax(0, 520px) minmax(82px, 112px) minmax(210px, 280px);
+    column-gap: clamp(20px, 3vw, 34px);
   }
 
   .hero-copy {
-    max-width: 580px;
+    max-width: 520px;
   }
 
   h1 {
@@ -1075,7 +1186,11 @@ body:not(.is-loading) .hero-section .reveal {
   }
 
   .identity-orbit {
-    min-height: 320px;
+    min-height: 280px;
+  }
+
+  .hero-eth-core {
+    width: clamp(74px, 8vw, 102px);
   }
 
   .portrait-wrap {
@@ -1151,14 +1266,14 @@ body:not(.is-loading) .hero-section .reveal {
   }
 
   .hero-section {
-    grid-template-columns: minmax(0, 500px) minmax(170px, 220px);
-    column-gap: clamp(18px, 3vw, 28px);
+    grid-template-columns: minmax(0, 440px) minmax(62px, 84px) minmax(160px, 210px);
+    column-gap: clamp(14px, 2.4vw, 22px);
     row-gap: 8px;
     align-content: center;
   }
 
   .hero-copy {
-    max-width: 500px;
+    max-width: 440px;
   }
 
   h1 {
@@ -1190,7 +1305,11 @@ body:not(.is-loading) .hero-section .reveal {
   }
 
   .identity-orbit {
-    min-height: 188px;
+    min-height: 170px;
+  }
+
+  .hero-eth-core {
+    width: clamp(58px, 7vw, 76px);
   }
 
   .ring-one {
@@ -1326,6 +1445,7 @@ body:not(.is-loading) .hero-section .reveal {
   }
 
   .hero-copy,
+  .hero-eth-core,
   .identity-orbit,
   .hero-section .metric-grid,
   .scroll-cue {
@@ -1508,9 +1628,19 @@ body:not(.is-loading) .hero-section .reveal {
   }
 
   .identity-orbit {
-    order: -1;
+    order: -3;
     width: min(100%, 310px);
     margin-inline: auto;
+  }
+
+  .hero-eth-core {
+    order: -2;
+    width: 74px;
+    margin: -4px auto 0;
+  }
+
+  .hero-copy {
+    order: -1;
   }
 
   .hero-subtitle {
