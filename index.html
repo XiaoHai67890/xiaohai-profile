@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>XiaoHai67890 - Ethereum Starfield Profile</title>
+    <meta
+      name="description"
+      content="XiaoHai67890 is a Web3 Developer Experience, DevRel, full-stack engineer, and Ethereum protocol researcher."
+    />
+    <meta property="og:title" content="XiaoHai67890 - Ethereum Starfield Profile" />
+    <meta
+      property="og:description"
+      content="Ethereum protocol research, Web3 full-stack engineering, DevRel, and developer ecosystem building."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/avatar.jpg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="is-loading">
+    <canvas id="starfield" aria-hidden="true"></canvas>
+    <div class="cosmic-vignette" aria-hidden="true"></div>
+    <div class="eth-ghost" aria-hidden="true">
+      <svg viewBox="0 0 120 196">
+        <polygon points="60 0 0 98 60 70"></polygon>
+        <polygon points="60 0 120 98 60 70"></polygon>
+        <polygon points="0 98 60 132 60 70"></polygon>
+        <polygon points="120 98 60 132 60 70"></polygon>
+        <polygon points="0 110 60 196 60 144"></polygon>
+        <polygon points="120 110 60 196 60 144"></polygon>
+      </svg>
+    </div>
+    <div class="eth-line-logo" aria-hidden="true">
+      <svg viewBox="0 0 120 196">
+        <path d="M60 2 2 98l58-28 58 28L60 2Z" />
+        <path d="M2 98 60 132l58-34" />
+        <path d="M2 110 60 194l58-84-58 34-58-34Z" />
+        <path d="M60 70v62" />
+        <path d="M60 144v50" />
+      </svg>
+    </div>
+
+    <a class="skip-link" href="#main" data-zh="跳到正文" data-en="Skip to content">跳到正文</a>
+
+    <div class="loader" id="loader" aria-label="Loading profile">
+      <div class="loader-stage">
+        <div class="eth-loader" aria-hidden="true">
+          <svg class="eth-glyph" viewBox="0 0 120 196" role="img" aria-label="Ethereum mark">
+            <defs>
+              <linearGradient id="ethSolidLeft" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#f6f8ff" />
+                <stop offset="48%" stop-color="#8fffeb" />
+                <stop offset="100%" stop-color="#627eea" />
+              </linearGradient>
+              <linearGradient id="ethSolidRight" x1="1" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#dfe6ff" />
+                <stop offset="46%" stop-color="#31d7ff" />
+                <stop offset="100%" stop-color="#627eea" />
+              </linearGradient>
+            </defs>
+            <polygon class="eth-face eth-top-left" points="60 0 0 98 60 70"></polygon>
+            <polygon class="eth-face eth-top-right" points="60 0 120 98 60 70"></polygon>
+            <polygon class="eth-face eth-mid-left" points="0 98 60 132 60 70"></polygon>
+            <polygon class="eth-face eth-mid-right" points="120 98 60 132 60 70"></polygon>
+            <polygon class="eth-face eth-bottom-left" points="0 110 60 196 60 144"></polygon>
+            <polygon class="eth-face eth-bottom-right" points="120 110 60 196 60 144"></polygon>
+          </svg>
+          <div class="eth-particles" id="ethParticles" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Primary navigation">
+        <a class="brand" href="#identity" aria-label="XiaoHai67890 home">
+          <span class="brand-mark">Ξ</span>
+          <span>XiaoHai67890</span>
+        </a>
+        <div class="nav-links">
+          <a href="#identity" data-zh="身份" data-en="Identity">身份</a>
+          <a href="#focus" data-zh="能力" data-en="Focus">能力</a>
+          <a href="#work" data-zh="经历" data-en="Work">经历</a>
+          <a href="#projects" data-zh="项目" data-en="Projects">项目</a>
+          <a href="#writing" data-zh="文章" data-en="Writing">文章</a>
+          <a href="#contact" data-zh="联系" data-en="Contact">联系</a>
+        </div>
+        <button class="language-toggle" type="button" id="languageToggle" aria-label="Switch language">
+          EN
+        </button>
+      </nav>
+    </header>
+
+    <main id="main" class="cosmic-shell">
+      <div class="page-track">
+      <section class="story-section hero-section" id="identity" data-section>
+        <div class="hero-copy">
+          <h1 class="reveal">XiaoHai<span>67890</span></h1>
+          <p
+            class="hero-subtitle reveal"
+            data-zh="Web3 DX / DevRel / 全栈工程师 / 以太坊协议研究者"
+            data-en="Web3 DX / DevRel / Full-Stack Engineer / Ethereum Researcher"
+          >
+            Web3 DX / DevRel / 全栈工程师 / 以太坊协议研究者
+          </p>
+          <p
+            class="hero-summary reveal"
+            data-zh="我把协议理解、产品实现、开发者教育和社区传播连接成同一个工作流。"
+            data-en="I connect protocol understanding, product implementation, developer education, and ecosystem storytelling into one workflow."
+          >
+            我把协议理解、产品实现、开发者教育和社区传播连接成同一个工作流。
+          </p>
+          <div class="hero-actions reveal" aria-label="Profile links">
+            <a class="button button-primary" href="mailto:zc040809@gmail.com" data-zh="联系我" data-en="Contact">联系我</a>
+            <a class="button" href="https://github.com/XiaoHai67890" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="button" href="https://x.com/XiaoHai67890" target="_blank" rel="noreferrer">X</a>
+            <a class="button" href="https://paragraph.com/xiaohai.eth" target="_blank" rel="noreferrer">Paragraph</a>
+          </div>
+        </div>
+
+        <div class="identity-orbit reveal" aria-label="Profile avatar and highlights">
+          <div class="orbit-ring ring-one" aria-hidden="true"></div>
+          <div class="orbit-ring ring-two" aria-hidden="true"></div>
+          <figure class="portrait-wrap">
+            <img src="assets/avatar.jpg" alt="XiaoHai67890 profile avatar" />
+          </figure>
+        </div>
+
+        <div class="metric-grid" aria-label="Highlights">
+          <div class="metric reveal">
+            <span>3000+</span>
+            <p data-zh="以太坊的星辰大海" data-en="Ethereum Starry Sea">以太坊的星辰大海</p>
+          </div>
+          <div class="metric reveal">
+            <span>150+</span>
+            <p data-zh="021 Ethereum 点赞量" data-en="021 Ethereum likes">021 Ethereum 点赞量</p>
+          </div>
+          <div class="metric reveal">
+            <span>4,000+</span>
+            <p data-zh="治理研究阅读" data-en="governance research reads">治理研究阅读</p>
+          </div>
+          <div class="metric reveal">
+            <span>1st</span>
+            <p data-zh="黑客松冠军" data-en="hackathon champion">黑客松冠军</p>
+          </div>
+        </div>
+
+        <a class="scroll-cue reveal" href="#focus" data-zh="滑动一下，切换下一页" data-en="Swipe once to enter the next page">
+          滑动一下，切换下一页
+        </a>
+      </section>
+
+      <section class="story-section" id="focus" data-section>
+        <div class="panel-heading">
+          <p class="eyebrow reveal" data-zh="能力图谱" data-en="Capability map">能力图谱</p>
+          <h2 class="reveal" data-zh="四条轨道，构成我的协议工作流" data-en="Four orbits form my protocol workflow">
+            四条轨道，构成我的协议工作流
+          </h2>
+        </div>
+        <div class="focus-grid">
+          <div class="reveal">
+            <span data-zh="协议研究" data-en="Protocol Research">协议研究</span>
+            <p>Ethereum, EIP, ZK, AA</p>
+          </div>
+          <div class="reveal">
+            <span data-zh="产品工程" data-en="Product Engineering">产品工程</span>
+            <p>React, Next.js, Solidity</p>
+          </div>
+          <div class="reveal">
+            <span data-zh="开发者生态" data-en="Developer Ecosystem">开发者生态</span>
+            <p data-zh="DevRel, 教育, 社区增长" data-en="DevRel, education, growth">DevRel, 教育, 社区增长</p>
+          </div>
+          <div class="reveal">
+            <span data-zh="技术叙事" data-en="Technical Storytelling">技术叙事</span>
+            <p data-zh="治理, 内容, 跨文化协作" data-en="governance, content, collaboration">治理, 内容, 跨文化协作</p>
+          </div>
+        </div>
+        <div class="skill-cloud reveal" aria-label="Skills">
+          <span>Solidity</span>
+          <span>Next.js 15</span>
+          <span>TypeScript</span>
+          <span>Wagmi</span>
+          <span>Viem</span>
+          <span>Foundry</span>
+          <span>Semaphore V4</span>
+          <span>Account Abstraction</span>
+          <span>DevRel</span>
+          <span>DAO Governance</span>
+        </div>
+      </section>
+
+      <section class="story-section" id="work" data-section>
+        <div class="panel-heading">
+          <p class="eyebrow reveal" data-zh="经历链路" data-en="Experience path">经历链路</p>
+          <h2 class="reveal" data-zh="从协议学习到&#10;开发者生态" data-en="From protocol learning&#10;to developer ecosystems">
+            从协议学习到
+            开发者生态
+          </h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <time>2026.01 - Present</time>
+            <div>
+              <h3>Ethereum Protocol Fellowship</h3>
+              <p class="role" data-zh="2026 华语区负责人" data-en="2026 Chinese-speaking Regional Lead">2026 华语区负责人</p>
+              <p data-zh="统筹华语开发者参与路径，组织协议、共识机制与核心 EIP 学习，并维护 ETHCorePlay 学习平台。" data-en="Lead Chinese-speaking developer participation, organize protocol and EIP learning, and maintain the ETHCorePlay learning platform.">
+                统筹华语开发者参与路径，组织协议、共识机制与核心 EIP 学习，并维护 ETHCorePlay 学习平台。
+              </p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <time>2025.11 - 2026.04</time>
+            <div>
+              <h3>ETHPanda</h3>
+              <p class="role" data-zh="DevRel / 开发者关系与社区生态运营" data-en="DevRel / Developer Relations and ecosystem operations">DevRel / 开发者关系与社区生态运营</p>
+              <p data-zh="参与 Web3 实习项目筹备与全周期运营，通过社区渠道、内容包装与雇主品牌建设吸引 2,900+ 名候选人申请。" data-en="Supported the Web3 internship program across operations, distribution, content packaging, and employer branding, attracting 2,900+ applicants.">
+                参与 Web3 实习项目筹备与全周期运营，通过社区渠道、内容包装与雇主品牌建设吸引 2,900+ 名候选人申请。
+              </p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <time>2025.07 - 2026.02</time>
+            <div>
+              <h3>LXDAO</h3>
+              <p class="role" data-zh="核心贡献者 / 技术治理研究员" data-en="Core Contributor / Technical Governance Researcher">核心贡献者 / 技术治理研究员</p>
+              <p data-zh="提出并撰写退出驱动价格演化理论，相关治理研究累计获得 4,000+ 阅读。" data-en="Proposed and authored Exit-Driven Evolution Theory, with related governance research reaching 4,000+ reads.">
+                提出并撰写退出驱动价格演化理论，相关治理研究累计获得 4,000+ 阅读。
+              </p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <time>2025.03 - 2025.09</time>
+            <div>
+              <h3>Aro.Network</h3>
+              <p class="role" data-zh="前端开发工程师" data-en="Frontend Developer">前端开发工程师</p>
+              <p data-zh="负责 ARO Lite 浏览器插件与 Web Dashboard 核心交互，构建实时节点数据看板和 Web3 钱包集成。" data-en="Built core interactions for ARO Lite and Web Dashboard, including real-time node dashboards and Web3 wallet integration.">
+                负责 ARO Lite 浏览器插件与 Web Dashboard 核心交互，构建实时节点数据看板和 Web3 钱包集成。
+              </p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <time>2024.09 - 2024.12</time>
+            <div>
+              <h3>Crust.Network</h3>
+              <p class="role" data-zh="智能合约开发工程师" data-en="Smart Contract Developer">智能合约开发工程师</p>
+              <p data-zh="参与去中心化存储网络激励层合约构建与维护，协助实现支付验证、MPoW 与 GPoS 相关逻辑。" data-en="Contributed to incentive-layer smart contracts for decentralized storage, including payment verification, MPoW, and GPoS logic.">
+                参与去中心化存储网络激励层合约构建与维护，协助实现支付验证、MPoW 与 GPoS 相关逻辑。
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="story-section" id="projects" data-section>
+        <div class="panel-heading">
+          <p class="eyebrow reveal" data-zh="公开作品入口" data-en="Public work graph">公开作品入口</p>
+          <h2 class="reveal" data-zh="从开源教育、协议学习到 Web3 产品原型" data-en="From open education and protocol learning to Web3 product prototypes">
+            从开源教育、协议学习到 Web3 产品原型
+          </h2>
+        </div>
+        <div class="source-grid">
+          <article class="source-card reveal">
+            <div class="card-topline"><span>X</span><span>@XiaoHai67890</span></div>
+            <h3 data-zh="实时观点与社区对话" data-en="Real-time thoughts and community dialogue">实时观点与社区对话</h3>
+            <p data-zh="用于发布以太坊生态观察、开发者社区互动和即时想法。" data-en="A public channel for Ethereum ecosystem notes, developer community interaction, and quick thoughts.">
+              用于发布以太坊生态观察、开发者社区互动和即时想法。
+            </p>
+            <a class="text-link" href="https://x.com/XiaoHai67890" target="_blank" rel="noreferrer">x.com/XiaoHai67890</a>
+          </article>
+          <article class="source-card reveal">
+            <div class="card-topline"><span>GitHub</span><span>4 repos</span></div>
+            <h3 data-zh="工程与开源教材" data-en="Engineering and open education">工程与开源教材</h3>
+            <p data-zh="沉淀 021Ethereum、ETHCorePlay、CrediNet 等项目，把研究转化为可复用的代码与文档。" data-en="Hosts 021Ethereum, ETHCorePlay, CrediNet, and other work that turns research into reusable code and documentation.">
+              沉淀 021Ethereum、ETHCorePlay、CrediNet 等项目，把研究转化为可复用的代码与文档。
+            </p>
+            <a class="text-link" href="https://github.com/XiaoHai67890" target="_blank" rel="noreferrer">github.com/XiaoHai67890</a>
+          </article>
+          <article class="source-card reveal">
+            <div class="card-topline"><span>Paragraph</span><span>Trilogy</span></div>
+            <h3 data-zh="区块链文明三部曲" data-en="Blockchain Civilization Trilogy">区块链文明三部曲</h3>
+            <p data-zh="围绕权力可逆性、以太坊文明上限、主权个体与 DeSoc 展开长文研究。" data-en="Long-form research on power reversibility, Ethereum's civilizational ceiling, sovereign individuals, and DeSoc.">
+              围绕权力可逆性、以太坊文明上限、主权个体与 DeSoc 展开长文研究。
+            </p>
+            <a class="text-link" href="https://paragraph.com/xiaohai.eth" target="_blank" rel="noreferrer">paragraph.com/xiaohai.eth</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="story-section" id="repos" data-section>
+        <div class="panel-heading">
+          <p class="eyebrow reveal" data-zh="GitHub 项目模块" data-en="GitHub project modules">GitHub 项目模块</p>
+          <h2 class="reveal" data-zh="可复用的代码、教材与协议学习工作区" data-en="Reusable code, textbooks, and protocol learning workspaces">
+            可复用的代码、教材与协议学习工作区
+          </h2>
+        </div>
+        <div class="project-grid detail-grid">
+          <article class="project-card detail-card featured reveal">
+            <div class="card-topline">
+              <span data-zh="开源教材" data-en="Open textbook">开源教材</span>
+              <span>152 Stars</span>
+            </div>
+            <h3>021Ethereum</h3>
+            <p data-zh="一本面向小白、学生和 Web2 转 Web3 开发者的开源以太坊教材，用故事和类比降低协议学习门槛。" data-en="An open Ethereum textbook for beginners, students, and Web2-to-Web3 developers, using stories and analogies to make protocol learning approachable.">
+              一本面向小白、学生和 Web2 转 Web3 开发者的开源以太坊教材，用故事和类比降低协议学习门槛。
+            </p>
+            <details>
+              <summary><span data-zh="查看详情" data-en="View details">查看详情</span></summary>
+              <ul>
+                <li data-zh="定位：系统学习以太坊知识与未来展望的开源教材。" data-en="Positioning: an open-source textbook for systematically learning Ethereum and its future outlook.">定位：系统学习以太坊知识与未来展望的开源教材。</li>
+                <li data-zh="方法：拒绝术语堆砌，用故事、类比和工程化框架组织学习路径。" data-en="Method: avoids jargon dumps and organizes learning through stories, analogies, and an engineering-oriented framework.">方法：拒绝术语堆砌，用故事、类比和工程化框架组织学习路径。</li>
+                <li data-zh="社区：由 LXDAO 支持，LXDAO 与 ETHPanda 社区联合出品。" data-en="Community: supported by LXDAO and jointly produced with the ETHPanda community.">社区：由 LXDAO 支持，LXDAO 与 ETHPanda 社区联合出品。</li>
+              </ul>
+              <a class="text-link" href="https://github.com/XiaoHai67890/021Ethereum" target="_blank" rel="noreferrer">GitHub Repository</a>
+            </details>
+          </article>
+          <article class="project-card detail-card reveal">
+            <div class="card-topline"><span>ETHShanghai</span><span>TypeScript</span></div>
+            <h3>ETHShanghai-CrediNet</h3>
+            <p data-zh="基于区块链的去中心化信用协议，把链上链下行为转化为动态可视的 SBT 信用肖像。" data-en="A blockchain-based decentralized credit protocol that turns on-chain and off-chain behavior into a dynamic SBT credit portrait.">
+              基于区块链的去中心化信用协议，把链上链下行为转化为动态可视的 SBT 信用肖像。
+            </p>
+            <details>
+              <summary><span data-zh="查看详情" data-en="View details">查看详情</span></summary>
+              <ul>
+                <li data-zh="模型：信用光谱五维评估，包括基石、能力、财富、健康、行为。" data-en="Model: a five-dimensional credit spectrum covering foundation, ability, wealth, health, and behavior.">模型：信用光谱五维评估，包括基石、能力、财富、健康、行为。</li>
+                <li data-zh="能力：数据主权、CRN 激励、动态 SBT、生态应用入口。" data-en="Capabilities: data sovereignty, CRN incentives, dynamic SBTs, and ecosystem application gateways.">能力：数据主权、CRN 激励、动态 SBT、生态应用入口。</li>
+                <li data-zh="实现：React、TypeScript、Vite、Tailwind、wagmi、viem、RainbowKit、ethers.js。" data-en="Stack: React, TypeScript, Vite, Tailwind, wagmi, viem, RainbowKit, and ethers.js.">实现：React、TypeScript、Vite、Tailwind、wagmi、viem、RainbowKit、ethers.js。</li>
+              </ul>
+              <a class="text-link" href="https://github.com/XiaoHai67890/ETHShanghai-CrediNet" target="_blank" rel="noreferrer">GitHub Repository</a>
+            </details>
+          </article>
+        </div>
+      </section>
+
+      <section class="story-section" id="more-repos" data-section>
+        <div class="panel-heading">
+          <p class="eyebrow reveal" data-zh="协议学习工作区" data-en="Protocol learning workspaces">协议学习工作区</p>
+          <h2 class="reveal" data-zh="把长期学习沉淀成可协作的工具与 wiki" data-en="Turning long-term learning into collaborative tools and wikis">
+            把长期学习沉淀成可协作的工具与 wiki
+          </h2>
+        </div>
+        <div class="project-grid detail-grid">
+          <article class="project-card detail-card reveal">
+            <div class="card-topline"><span data-zh="协议学习" data-en="Protocol Learning">协议学习</span><span>2026</span></div>
+            <h3>ETHCorePlay</h3>
+            <p data-zh="面向 EPF 与以太坊协议学习的 AI-native 工作区，沉淀身份、记忆、工具、上下文与任务心跳模块。" data-en="An AI-native workspace for EPF and Ethereum protocol learning, organizing identity, memory, tools, context, and task heartbeat modules.">
+              面向 EPF 与以太坊协议学习的 AI-native 工作区，沉淀身份、记忆、工具、上下文与任务心跳模块。
+            </p>
+            <details>
+              <summary><span data-zh="查看详情" data-en="View details">查看详情</span></summary>
+              <ul>
+                <li data-zh="目标：把协议学习变成持续运行的个人工作区，而不是一次性资料夹。" data-en="Goal: turns protocol learning into a persistent personal workspace instead of a one-off folder.">目标：把协议学习变成持续运行的个人工作区，而不是一次性资料夹。</li>
+                <li data-zh="结构：从身份、用户记忆、工具、上下文、任务心跳等模块组织 AI-native 学习流程。" data-en="Structure: organizes an AI-native learning flow through identity, user memory, tools, context, and task heartbeat modules.">结构：从身份、用户记忆、工具、上下文、任务心跳等模块组织 AI-native 学习流程。</li>
+                <li data-zh="入口：提供线上版本 ethcoreplay.vercel.app 与开源仓库。" data-en="Access: available through ethcoreplay.vercel.app and the open repository.">入口：提供线上版本 ethcoreplay.vercel.app 与开源仓库。</li>
+              </ul>
+              <a class="text-link" href="https://github.com/XiaoHai67890/ETHCorePlay" target="_blank" rel="noreferrer">GitHub Repository</a>
+              <a class="text-link" href="https://ethcoreplay.vercel.app" target="_blank" rel="noreferrer">Live Site</a>
+            </details>
+          </article>
+          <article class="project-card detail-card reveal">
+            <div class="card-topline"><span data-zh="学习小组" data-en="Study group">学习小组</span><span>2026</span></div>
+            <h3>protocol-studies</h3>
+            <p data-zh="以太坊协议学习小组与协议 wiki，面向长期学习、协作整理和研究沉淀。" data-en="An Ethereum protocol study group and protocol wiki for long-term learning, collaborative organization, and research notes.">
+              以太坊协议学习小组与协议 wiki，面向长期学习、协作整理和研究沉淀。
+            </p>
+            <details>
+              <summary><span data-zh="查看详情" data-en="View details">查看详情</span></summary>
+              <ul>
+                <li data-zh="定位：学习 Ethereum 并构建协议 wiki 的协作型资料库。" data-en="Positioning: a collaborative repository for learning Ethereum and building a protocol wiki.">定位：学习 Ethereum 并构建协议 wiki 的协作型资料库。</li>
+                <li data-zh="价值：适合承接 EPF、协议研究与社区共学中的长期知识沉淀。" data-en="Value: suitable for long-term knowledge capture across EPF, protocol research, and community study.">价值：适合承接 EPF、协议研究与社区共学中的长期知识沉淀。</li>
+              </ul>
+              <a class="text-link" href="https://github.com/XiaoHai67890/protocol-studies" target="_blank" rel="noreferrer">GitHub Repository</a>
+            </details>
+          </article>
+        </div>
+      </section>
+
+      <section class="story-section" id="writing" data-section>
+        <div class="panel-heading">
+          <p class="eyebrow reveal" data-zh="文章模块" data-en="Writing modules">文章模块</p>
+          <h2 class="reveal" data-zh="Blockchain Civilization Trilogy" data-en="Blockchain Civilization Trilogy">
+            Blockchain Civilization Trilogy
+          </h2>
+        </div>
+        <div class="article-list">
+          <article class="article-card reveal">
+            <div class="article-index">01</div>
+            <div>
+              <div class="card-topline"><span>2025.12.02</span><span>Governance</span></div>
+              <h3>Taming the Leviathan</h3>
+              <p data-zh="从“授权容易、撤销困难”的历史困境出发，提出权力可逆性与 PRI 指数，把 DAO 和智能合约解释为治理工程的新范式。" data-en="Starts from the historical dilemma of easy authorization and hard revocation, then proposes Power Reversibility and the PRI index to frame DAO and smart contracts as a new governance-engineering paradigm.">
+                从“授权容易、撤销困难”的历史困境出发，提出权力可逆性与 PRI 指数，把 DAO 和智能合约解释为治理工程的新范式。
+              </p>
+              <details>
+                <summary><span data-zh="查看文章要点" data-en="View article notes">查看文章要点</span></summary>
+                <ul>
+                  <li data-zh="核心命题：权力约束机制是否有效，取决于授权能否低成本、高确定性地撤销。" data-en="Core claim: the effectiveness of power constraints depends on whether delegated power can be revoked with low cost and high certainty.">核心命题：权力约束机制是否有效，取决于授权能否低成本、高确定性地撤销。</li>
+                  <li data-zh="模型：PRI 从时间成本、经济成本、执行确定性、社会破坏性四个维度衡量治理可逆性。" data-en="Model: PRI measures governance reversibility through time cost, economic cost, execution certainty, and social destructiveness.">模型：PRI 从时间成本、经济成本、执行确定性、社会破坏性四个维度衡量治理可逆性。</li>
+                  <li data-zh="落点：可编程宪政把权力关系编码进自动执行的合约，让撤销从政治事件变成程序操作。" data-en="Takeaway: programmable constitutionalism encodes power relations into executable contracts, turning revocation from a political event into a procedural operation.">落点：可编程宪政把权力关系编码进自动执行的合约，让撤销从政治事件变成程序操作。</li>
+                </ul>
+                <a class="text-link" href="https://paragraph.com/@xiaohai67890/taming-the-leviathan-historical-context-of-power-reversibility-and-the-new-paradigm-of-algorithmic-governance" target="_blank" rel="noreferrer">Read on Paragraph</a>
+              </details>
+            </div>
+          </article>
+          <article class="article-card reveal">
+            <div class="article-index">02</div>
+            <div>
+              <div class="card-topline"><span>2025.12.05</span><span>Ethereum</span></div>
+              <h3>The Upper Bound of Ethereum</h3>
+              <p data-zh="把以太坊从 World Computer 重新定位为文明基础设施，讨论其技术、制度、文化合法性，以及技术、经济、治理、社会四类边界。" data-en="Reframes Ethereum from a World Computer into civilizational infrastructure, examining its technical, institutional, and cultural legitimacy plus technical, economic, governance, and social boundaries.">
+                把以太坊从 World Computer 重新定位为文明基础设施，讨论其技术、制度、文化合法性，以及技术、经济、治理、社会四类边界。
+              </p>
+              <details>
+                <summary><span data-zh="查看文章要点" data-en="View article notes">查看文章要点</span></summary>
+                <ul>
+                  <li data-zh="核心命题：以太坊的上限不是 TPS 或 Gas，而是可编程、可验证基础上承载社会复杂性的能力。" data-en="Core claim: Ethereum's upper bound is not TPS or gas cost, but its capacity to carry social complexity on a programmable, verifiable foundation.">核心命题：以太坊的上限不是 TPS 或 Gas，而是可编程、可验证基础上承载社会复杂性的能力。</li>
+                  <li data-zh="三重基础：技术中立与安全、可编程社会契约、正和公共精神共同构成文明根基。" data-en="Triple foundation: technical neutrality and security, programmable social contracts, and positive-sum public spirit form its civilizational root.">三重基础：技术中立与安全、可编程社会契约、正和公共精神共同构成文明根基。</li>
+                  <li data-zh="终局想象：UBI、可竞争主权、人机共治与无限游戏式的文明元框架。" data-en="Endgame imagination: UBI, contestable sovereignty, human-machine co-governance, and an infinite-game civilizational meta-framework.">终局想象：UBI、可竞争主权、人机共治与无限游戏式的文明元框架。</li>
+                </ul>
+                <a class="text-link" href="https://paragraph.com/@xiaohai67890/the-upper-bound-of-ethereum" target="_blank" rel="noreferrer">Read on Paragraph</a>
+              </details>
+            </div>
+          </article>
+          <article class="article-card reveal">
+            <div class="article-index">03</div>
+            <div>
+              <div class="card-topline"><span>2025.12.06</span><span>DeSoc</span></div>
+              <h3>The Birth of the Sovereign Individual</h3>
+              <p data-zh="作为三部曲收官篇，从“人上链”进入 DeSoc，讨论主权个体如何在身份、经济与治理三层重构数字社会。" data-en="The trilogy's concluding chapter moves from putting humans on-chain to DeSoc, exploring how sovereign individuals reshape digital society across identity, economy, and governance.">
+                作为三部曲收官篇，从“人上链”进入 DeSoc，讨论主权个体如何在身份、经济与治理三层重构数字社会。
+              </p>
+              <details>
+                <summary><span data-zh="查看文章要点" data-en="View article notes">查看文章要点</span></summary>
+                <ul>
+                  <li data-zh="迁移叙事：文明从原子时代进入比特时代，人的自由迁移成为治理竞争的底层机制。" data-en="Migration narrative: civilization moves from the Atomic Age into the Bit Age, where human mobility becomes the base mechanism of governance competition.">迁移叙事：文明从原子时代进入比特时代，人的自由迁移成为治理竞争的底层机制。</li>
+                  <li data-zh="身份架构：DID、ZK、SBT 共同组成主权身份栈，让身份、信用、能力和关系可验证、可组合。" data-en="Identity stack: DID, ZK, and SBT form a sovereign identity stack that makes identity, credit, ability, and relationships verifiable and composable.">身份架构：DID、ZK、SBT 共同组成主权身份栈，让身份、信用、能力和关系可验证、可组合。</li>
+                  <li data-zh="社会图景：个人可低成本迁移于多个 DAO 数字城邦，用“用脚投票”推动治理优化。" data-en="Social picture: individuals can migrate across DAO digital city-states at low cost, optimizing governance by voting with their feet.">社会图景：个人可低成本迁移于多个 DAO 数字城邦，用“用脚投票”推动治理优化。</li>
+                </ul>
+                <a class="text-link" href="https://paragraph.com/@xiaohai67890/the-birth-of-the-sovereign-individual" target="_blank" rel="noreferrer">Read on Paragraph</a>
+              </details>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="story-section contact-section" id="contact" data-section>
+        <div class="contact-grid">
+          <div>
+            <p class="eyebrow reveal" data-zh="建立连接" data-en="Connect">建立连接</p>
+            <h2 class="reveal" data-zh="欢迎交流协议研究、开发者生态与 Web3 产品工程。" data-en="Open to conversations about protocol research, developer ecosystems, and Web3 product engineering.">
+              欢迎交流协议研究、开发者生态与 Web3 产品工程。
+            </h2>
+          </div>
+          <div class="contact-actions reveal">
+            <a class="button button-primary" href="mailto:zc040809@gmail.com">zc040809@gmail.com</a>
+          </div>
+        </div>
+      </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> XiaoHai67890</p>
+      <p data-zh="Built as a page-driven Ethereum starfield profile." data-en="Built as a page-driven Ethereum starfield profile.">
+        Built as a page-driven Ethereum starfield profile.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
