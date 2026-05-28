@@ -428,18 +428,25 @@ body.is-instant-page .page-track {
 }
 
 .hero-section {
-  grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.55fr);
+  grid-template-columns: minmax(0, 720px) minmax(280px, 360px);
   align-items: center;
-  column-gap: clamp(36px, 6vw, 92px);
+  justify-content: center;
+  column-gap: clamp(48px, 5vw, 80px);
   row-gap: clamp(16px, 2.4vw, 28px);
 }
 
 .hero-copy {
   min-width: 0;
-  max-width: 880px;
+  max-width: 720px;
 }
 
-.hero-section .metric-grid,
+.hero-section .metric-grid {
+  grid-column: 1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  max-width: 720px;
+}
+
 .scroll-cue {
   grid-column: 1 / -1;
 }
@@ -596,7 +603,7 @@ h3 {
   display: grid;
   place-items: center;
   justify-self: center;
-  width: min(100%, 500px);
+  width: min(100%, 420px);
 }
 
 .orbit-ring {
@@ -1042,12 +1049,13 @@ body:not(.is-loading) .hero-section .reveal {
   }
 
   .hero-section {
-    grid-template-columns: minmax(0, 0.92fr) minmax(230px, 0.48fr);
+    grid-template-columns: minmax(0, 610px) minmax(220px, 310px);
+    justify-content: center;
     column-gap: clamp(28px, 4vw, 46px);
   }
 
   .hero-copy {
-    max-width: 700px;
+    max-width: 610px;
   }
 
   h1 {
@@ -1068,7 +1076,7 @@ body:not(.is-loading) .hero-section .reveal {
   }
 
   .metric-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .metric {
@@ -1136,14 +1144,15 @@ body:not(.is-loading) .hero-section .reveal {
   }
 
   .hero-section {
-    grid-template-columns: minmax(0, 1fr) minmax(190px, 0.34fr);
-    column-gap: clamp(24px, 4vw, 44px);
+    grid-template-columns: minmax(0, 560px) minmax(180px, 240px);
+    justify-content: center;
+    column-gap: clamp(22px, 3.2vw, 34px);
     row-gap: 10px;
     align-content: center;
   }
 
   .hero-copy {
-    max-width: 640px;
+    max-width: 560px;
   }
 
   h1 {
@@ -1176,6 +1185,7 @@ body:not(.is-loading) .hero-section .reveal {
 
   .identity-orbit {
     min-height: 210px;
+    justify-self: start;
   }
 
   .ring-one {
@@ -1194,7 +1204,10 @@ body:not(.is-loading) .hero-section .reveal {
   }
 
   .metric-grid {
+    grid-column: 1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
+    max-width: 560px;
   }
 
   .metric {
