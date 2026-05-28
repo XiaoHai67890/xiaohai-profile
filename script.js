@@ -17,6 +17,10 @@ let currentLanguage = savedLanguage === "en" ? "en" : "zh";
 let currentPage = 0;
 let isPaging = false;
 let touchStartY = 0;
+let touchStartX = 0;
+let touchStartScrollTop = 0;
+let touchSection = null;
+let touchStartedInNav = false;
 
 function applyLanguage(language) {
   currentLanguage = language;
@@ -227,6 +231,7 @@ function updateActiveNav() {
 
 function setPage(index, options = {}) {
   const { animate = true, updateHash = true } = options;
+  const previousPage = currentPage;
   currentPage = Math.max(0, Math.min(index, sections.length - 1));
   pageShell.scrollTop = 0;
   pageShell.scrollLeft = 0;
@@ -238,6 +243,10 @@ function setPage(index, options = {}) {
   sections.forEach((section, sectionIndex) => {
     section.classList.toggle("is-page-active", sectionIndex === currentPage);
   });
+
+  if (previousPage !== currentPage) {
+    sections[currentPage].scrollTop = 0;
+  }
 
   revealPage(currentPage);
   updateActiveNav();
@@ -266,17 +275,39 @@ function queuePageTurn(direction) {
   }, 850);
 }
 
+function getEventSection(target) {
+  const matchedSection = target?.closest?.("[data-section]");
+  return matchedSection === sections[currentPage] ? matchedSection : sections[currentPage];
+}
+
+function canScrollSection(section, direction, scrollTop = section.scrollTop) {
+  if (!section) return false;
+
+  const scrollableHeight = section.scrollHeight - section.clientHeight;
+  if (scrollableHeight <= 4) return false;
+
+  if (direction > 0) {
+    return scrollTop < scrollableHeight - 4;
+  }
+
+  return scrollTop > 4;
+}
+
 function setupPageNavigation() {
   window.addEventListener(
     "wheel",
     (event) => {
       if (event.ctrlKey) return;
-      event.preventDefault();
 
       const delta = Math.abs(event.deltaY) >= Math.abs(event.deltaX) ? event.deltaY : event.deltaX;
       if (Math.abs(delta) < 22) return;
 
-      queuePageTurn(delta > 0 ? 1 : -1);
+      const direction = delta > 0 ? 1 : -1;
+      const section = getEventSection(event.target);
+      if (canScrollSection(section, direction)) return;
+
+      event.preventDefault();
+      queuePageTurn(direction);
     },
     { passive: false }
   );
@@ -284,7 +315,11 @@ function setupPageNavigation() {
   window.addEventListener(
     "touchstart",
     (event) => {
+      touchStartX = event.touches[0].clientX;
       touchStartY = event.touches[0].clientY;
+      touchSection = getEventSection(event.target);
+      touchStartScrollTop = touchSection?.scrollTop || 0;
+      touchStartedInNav = Boolean(event.target?.closest?.(".site-header"));
     },
     { passive: true }
   );
@@ -292,10 +327,16 @@ function setupPageNavigation() {
   window.addEventListener(
     "touchend",
     (event) => {
-      const delta = touchStartY - event.changedTouches[0].clientY;
-      if (Math.abs(delta) > 48) {
-        queuePageTurn(delta > 0 ? 1 : -1);
-      }
+      if (touchStartedInNav) return;
+
+      const deltaX = touchStartX - event.changedTouches[0].clientX;
+      const deltaY = touchStartY - event.changedTouches[0].clientY;
+      if (Math.abs(deltaY) < 52 || Math.abs(deltaY) < Math.abs(deltaX) * 1.18) return;
+
+      const direction = deltaY > 0 ? 1 : -1;
+      if (canScrollSection(touchSection, direction, touchStartScrollTop)) return;
+
+      queuePageTurn(direction);
     },
     { passive: true }
   );
