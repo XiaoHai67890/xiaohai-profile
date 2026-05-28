@@ -198,8 +198,34 @@ body.is-loading .eth-line-logo {
   animation-duration: 6.2s;
 }
 
+.loader-eth-ghost {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0.28;
+  filter:
+    blur(0.2px)
+    drop-shadow(0 0 28px rgba(143, 255, 235, 0.42))
+    drop-shadow(0 0 64px rgba(98, 126, 234, 0.3));
+  animation: loaderGhostPulse 3.8s ease-in-out infinite;
+}
+
+.loader-eth-ghost svg {
+  width: clamp(138px, 24vw, 238px);
+  height: auto;
+  fill: rgba(143, 255, 235, 0.035);
+  stroke: rgba(143, 255, 235, 0.42);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1;
+  transform: rotate(0deg);
+}
+
 .eth-loader {
   position: relative;
+  z-index: 1;
   width: clamp(108px, 18vw, 154px);
   height: clamp(176px, 29vw, 252px);
   filter:
@@ -1121,6 +1147,18 @@ body:not(.is-loading) .hero-section .reveal {
 @keyframes slowSpin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes loaderGhostPulse {
+  0%,
+  100% {
+    opacity: 0.18;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 0.34;
+    transform: scale(1.03);
   }
 }
 
