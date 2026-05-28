@@ -428,27 +428,32 @@ body.is-instant-page .page-track {
 }
 
 .hero-section {
-  grid-template-columns: minmax(0, 720px) minmax(280px, 360px);
+  grid-template-columns: minmax(0, 760px) minmax(280px, 360px);
   align-items: center;
   justify-content: center;
-  column-gap: clamp(48px, 5vw, 80px);
-  row-gap: clamp(16px, 2.4vw, 28px);
+  column-gap: clamp(44px, 4.6vw, 72px);
+  row-gap: clamp(16px, 2vw, 22px);
 }
 
 .hero-copy {
+  grid-column: 1;
+  grid-row: 1;
   min-width: 0;
-  max-width: 720px;
+  max-width: 760px;
 }
 
 .hero-section .metric-grid {
-  grid-column: 1;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-column: 1 / -1;
+  grid-row: 2;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  justify-self: center;
   width: 100%;
-  max-width: 720px;
+  max-width: 1120px;
 }
 
 .scroll-cue {
   grid-column: 1 / -1;
+  grid-row: 3;
 }
 
 .eyebrow {
@@ -468,16 +473,17 @@ p {
 
 h1 {
   max-width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   color: var(--ink);
-  font-size: clamp(4rem, 7.4vw, 7rem);
+  font-size: clamp(3.8rem, 5.2vw, 5.4rem);
   font-weight: 950;
   letter-spacing: 0;
   line-height: 0.9;
   text-shadow:
     0 0 34px rgba(98, 126, 234, 0.38),
     0 0 70px rgba(143, 255, 235, 0.16);
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 h1 span {
@@ -599,6 +605,8 @@ h3 {
 
 .identity-orbit {
   position: relative;
+  grid-column: 2;
+  grid-row: 1;
   min-height: clamp(320px, 32vw, 430px);
   display: grid;
   place-items: center;
@@ -691,20 +699,20 @@ h3 {
 }
 
 .metric {
-  min-height: 112px;
-  padding: 18px;
+  min-height: 92px;
+  padding: 16px 18px;
 }
 
 .metric span {
   display: block;
   color: var(--cyan);
-  font-size: clamp(1.65rem, 2.7vw, 2.35rem);
+  font-size: clamp(1.7rem, 2.5vw, 2.35rem);
   font-weight: 950;
   line-height: 1;
 }
 
 .metric p {
-  margin: 9px 0 0;
+  margin: 7px 0 0;
   color: var(--muted);
   font-size: 0.92rem;
 }
@@ -1049,17 +1057,16 @@ body:not(.is-loading) .hero-section .reveal {
   }
 
   .hero-section {
-    grid-template-columns: minmax(0, 610px) minmax(220px, 310px);
-    justify-content: center;
-    column-gap: clamp(28px, 4vw, 46px);
+    grid-template-columns: minmax(0, 580px) minmax(220px, 300px);
+    column-gap: clamp(28px, 4vw, 42px);
   }
 
   .hero-copy {
-    max-width: 610px;
+    max-width: 580px;
   }
 
   h1 {
-    font-size: clamp(3.8rem, 7.2vw, 5.3rem);
+    font-size: clamp(3.2rem, 6vw, 4.35rem);
     line-height: 0.92;
   }
 
@@ -1076,16 +1083,16 @@ body:not(.is-loading) .hero-section .reveal {
   }
 
   .metric-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .metric {
-    min-height: 94px;
-    padding: 16px 18px;
+    min-height: 82px;
+    padding: 13px 14px;
   }
 
   .metric span {
-    font-size: clamp(1.6rem, 3.4vw, 2.25rem);
+    font-size: clamp(1.5rem, 3vw, 2rem);
   }
 
   .metric p {
@@ -1144,20 +1151,19 @@ body:not(.is-loading) .hero-section .reveal {
   }
 
   .hero-section {
-    grid-template-columns: minmax(0, 560px) minmax(180px, 240px);
-    justify-content: center;
-    column-gap: clamp(22px, 3.2vw, 34px);
-    row-gap: 10px;
+    grid-template-columns: minmax(0, 500px) minmax(170px, 220px);
+    column-gap: clamp(18px, 3vw, 28px);
+    row-gap: 8px;
     align-content: center;
   }
 
   .hero-copy {
-    max-width: 560px;
+    max-width: 500px;
   }
 
   h1 {
-    margin-bottom: 10px;
-    font-size: clamp(3.15rem, 6vw, 4.2rem);
+    margin-bottom: 8px;
+    font-size: clamp(2.8rem, 5.2vw, 3.35rem);
     line-height: 0.9;
   }
 
@@ -1184,8 +1190,7 @@ body:not(.is-loading) .hero-section .reveal {
   }
 
   .identity-orbit {
-    min-height: 210px;
-    justify-self: start;
+    min-height: 188px;
   }
 
   .ring-one {
@@ -1204,23 +1209,23 @@ body:not(.is-loading) .hero-section .reveal {
   }
 
   .metric-grid {
-    grid-column: 1;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 8px;
-    max-width: 560px;
+    max-width: 900px;
   }
 
   .metric {
-    min-height: 76px;
-    padding: 12px 14px;
+    min-height: 68px;
+    padding: 10px 12px;
   }
 
   .metric span {
-    font-size: clamp(1.55rem, 3vw, 2.05rem);
+    font-size: clamp(1.4rem, 2.5vw, 1.75rem);
   }
 
   .metric p {
-    margin-top: 5px;
+    margin-top: 4px;
     font-size: 0.78rem;
     line-height: 1.25;
   }
@@ -1314,8 +1319,18 @@ body:not(.is-loading) .hero-section .reveal {
     grid-template-columns: 1fr;
   }
 
-  .metric-grid {
+  .metric-grid,
+  .hero-section .metric-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: none;
+  }
+
+  .hero-copy,
+  .identity-orbit,
+  .hero-section .metric-grid,
+  .scroll-cue {
+    grid-column: 1;
+    grid-row: auto;
   }
 
   .project-card.featured {
