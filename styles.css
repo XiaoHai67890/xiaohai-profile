@@ -1219,6 +1219,14 @@ body:not(.is-loading) .hero-section .reveal {
   .hero-copy {
     width: 100%;
     margin-inline: auto;
+    text-align: center;
+  }
+
+  .hero-copy h1,
+  .hero-subtitle,
+  .hero-summary {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .identity-orbit {
@@ -1240,7 +1248,7 @@ body:not(.is-loading) .hero-section .reveal {
   }
 
   .hero-actions {
-    justify-content: flex-start;
+    justify-content: center;
     gap: 8px;
     margin-top: 14px;
   }
