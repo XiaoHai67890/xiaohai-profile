@@ -283,6 +283,9 @@ function getEventSection(target) {
 function canScrollSection(section, direction, scrollTop = section.scrollTop) {
   if (!section) return false;
 
+  const overflowY = window.getComputedStyle(section).overflowY;
+  if (!["auto", "scroll"].includes(overflowY)) return false;
+
   const scrollableHeight = section.scrollHeight - section.clientHeight;
   if (scrollableHeight <= 4) return false;
 
